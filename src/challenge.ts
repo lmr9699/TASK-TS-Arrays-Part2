@@ -12,11 +12,16 @@
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]); // => []
  * explanation: the number of elements provided is 5. 5 is odd, so we return empty array
  */
-function secondHalfOfArrayIfItIsEven(fruits: string[]): string[] {
-  // Your code here
-
-  return []; // replace empty array with what you see is fit
-}
+// function secondHalfOfArrayIfItIsEven(fruits: string[]): string[] {
+//   // Your code here
+const secondHalfOfArrayIfItIsEven = (fruits: string[]): string[] => {
+  if (fruits.length % 2 === 0) {
+    return fruits.slice(fruits.length / 2);
+  }
+  return [];
+};
+//   return []; // replace empty array with what you see is fit
+// }
 
 /**
  * youGottaCalmDown(shout):
@@ -32,10 +37,15 @@ function secondHalfOfArrayIfItIsEven(fruits: string[]): string[] {
  * - Use string method .indexOf()
  * - Use string method .slice()
  */
-function youGottaCalmDown(shout: string): string {
-  // Your code here
-
-  return ""; // replace the empty string with what you see is fit
-}
+// function youGottaCalmDown(shout: string): string {
+//   // Your code here
+const youGottaCalmDown = (shout: string): string => {
+  const index = shout.indexOf("!");
+  if (index === -1) {
+    return shout;
+  }
+  return shout.slice(0, index + 1);
+};
+  // return ""; // replace the empty string with what you see is fit
 
 export { secondHalfOfArrayIfItIsEven, youGottaCalmDown };
